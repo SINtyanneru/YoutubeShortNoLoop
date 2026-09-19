@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+	"name": "Youtubeのショート動画でループ再生を切るやつ",
+	"version": "1.0",
+
+	"description": "最後と最初でループさせて再生回数を稼ぐキモい動画に制裁を",
+
+	"icons": {
+		"48": "icons/48.png"
+	},
+
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "youtubeshortnoloop@webex.rumi-room.jp",
+			"data_collection_permissions": {
+				"required": ["none"]
+			}
+		}
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["*://*.youtube.com/*"],
+			"js": ["src/ff.js"]
+		}
+	]
+}
